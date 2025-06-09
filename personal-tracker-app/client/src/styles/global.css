@@ -1,0 +1,146 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --mint-gradient: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  --lavender: #e6e6fa;
+  --mint: #f0fff4;
+  --blush: #fdf2f8;
+  --warm-white: #fefefe;
+  --text-primary: #2d3748;
+  --text-secondary: #718096;
+  --gold: #ffd700;
+  --teal: #38b2ac;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --glass: rgba(255, 255, 255, 0.25);
+}
+
+[data-theme="dark"] {
+  --warm-white: #1a202c;
+  --text-primary: #f7fafc;
+  --text-secondary: #a0aec0;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --glass: rgba(255, 255, 255, 0.1);
+  --lavender: #2d3748;
+  --mint: #2d3748;
+  --blush: #2d3748;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, var(--lavender) 0%, var(--mint) 50%, var(--blush) 100%);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+  min-height: 100vh;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(102, 126, 234, 0.8);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes confetti {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .score-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .score-inner {
+    width: 120px;
+    height: 120px;
+  }
+
+  .score-number {
+    font-size: 2rem;
+  }
+
+  .weekly-log {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+  }
+
+  .day-item {
+    padding: 0.5rem;
+  }
+} 
